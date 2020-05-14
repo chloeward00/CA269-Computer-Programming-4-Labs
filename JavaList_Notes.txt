@@ -1,0 +1,53 @@
+Java has a package called Collections which provides a useful way of handling collections of data and sorting them.
+
+For example, Java has a List which provides most of the functionality of arrays, but does support additional methods,
+such as the add() method to add an item to the end of an array.
+
+Interestingly, the List is actually an interface. The implentation is a class, such as ArrayList or LinkedList.
+To create a List of Strings, you would use the following code:
+
+=======================
+import java.util.List;
+import java.util.ArrayList;
+
+        :
+        :
+
+    List<String> names = new ArrayList<String>();
+
+    names.add("Charlie");
+    names.add("Zebedee");
+    names.add("James");
+=======================
+
+And you can use these with the enhanced for loop to print out the array:
+
+    for(String name : names)
+        System.out.println(name);
+
+ArrayLists can only store objects. They can't directly store primitive types such as ints.
+However, there is a technique called auto boxing which can automatically convert an int to its Object equivalent (Integer) and vice versa.This means that you can do something such as:
+
+=======================
+    Scanner in = new Scanner(System.in);
+    List<Integer> numbers = new ArrayList<Integer>(); // Create a List of Integers
+    
+    int num = in.nextInt();
+    while(num != 0)
+    {
+        numbers.add(num);   // The int is automatically converted to an Integer (autoboxing)
+        num = in.nextInt();
+    }
+
+    for(int number : numbers)  // The Integer object is automatically converted back to an int (unbox)
+        System.out.print(number);
+=======================
+
+Once you have your information in a List, you can then apply various algorithms using the Collections classes. E.g. to sort numbers, use the static method of the Collections class:
+    Collections.sort(numbers);
+The Collections class has many useful algorithms.
+
+You can also use the old style for loop, and then you will usually need the size() and get() methods.
+
+   for(int i = 0; i < numbers.size(); i++)
+      System.out.println(numbers.get(i));

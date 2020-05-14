@@ -1,0 +1,36 @@
+Maps
+
+As usual with collections classes, a Map has an interface (called Map) and some implementations, e.g. HashMap and TreeMap. And as is also usual, generics apply to Maps as well. The following code creates a HashMap where Strings are mapped to Integers:
+
+    Map<String, Integer> map = new HashMap<>();
+
+Note that you could also have:
+
+    HashMap <String, Integer> map = new HashMap<>();
+
+or
+
+    Map <String, Integer> map = new HashMap<String, Integer>();
+
+If you wanted a TreeMap, you would use:
+
+    Map <String, Integer> map = new TreeMap<>();
+
+And you could use
+
+    TreeMap <String, Integer> map = new TreeMap<>();
+
+But then it would make it harder to change your code back to using a HashMap later on.
+
+Once you have a Map, you can use the put method to associate things with other things. E.g. a name and a number:
+
+    Map<String, Integer> phoneBook = new HashMap<>();
+    phoneBook.put("James", 123456);
+
+You can retrieve elements with the get method:
+
+    int number = phoneBook.get("James");
+
+Of course, you have already seen maps in Python, where they are called dictionarys. They are easier to use, but you will get type safety with the Java maps.
+
+Maps have a keySet() method which returns a Set of the keys and a size() method which returns the number of keys in the map.

@@ -1,0 +1,18 @@
+Another useful Collections interface is the Set. This Set has come concrete implementations,
+such as the HashSet and the TreeSet.
+
+Here is an example of using a Set to spot if a name occurs twice in the input:
+
+    Scanner in = new Scanner(System.in);
+    Set<String> set = new HashSet<String>();
+
+    while(in.hasNext())
+    {
+        String name - in.next();
+        if(set.contains(name))
+            Systen.out.println(name + " has already occurred!");
+        else
+            set.add(name);
+    }
+
+Sets can be converted to Lists using the constructor of, e.g., an ArrayList.
